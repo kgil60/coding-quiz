@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --purple-primary: #4C0070;
+    --purple-secondary: #79018C;
+    --purple-tertiary: #9c02e6;
+}
+
+body {
+    background-color: #fff;
+    font-family: Helvetica, Arial, sans-serif
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    font-size: 1.2rem;
+}
+
+header a {
+    color: var(--purple-secondary);
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4%;
+}
+
+.home-content h1 {
+    font-size: 2.5rem;
+}
+
+.home-content p {
+    font-size: 1.4rem;
+    text-align: center;
+    width: 60%;
+}
+
+.home-content button {
+    outline: none;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.4rem;
+    background-color: var(--purple-primary);
+    border-radius: 8px;
+    color: #fff;
+}
