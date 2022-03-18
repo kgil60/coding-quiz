@@ -25,24 +25,24 @@ header a {
     color: var(--purple-secondary);
 }
 
-.home-content {
+.main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 4%;
 }
 
-.home-content h1 {
+.title {
     font-size: 2.5rem;
 }
 
-.home-content p {
+.main-content p {
     font-size: 1.4rem;
     text-align: center;
     width: 60%;
 }
 
-.home-content button {
+.btn {
     outline: none;
     border: none;
     padding: 10px 15px;
@@ -50,4 +50,21 @@ header a {
     background-color: var(--purple-primary);
     border-radius: 8px;
     color: #fff;
+    margin: 10px;
 }
+
+.btn:hover {
+    background-color: var(--purple-tertiary);
+}
+
+.question-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4%;
+}
+
+.question-content .answer-list {
+    list-style: none;
+}
+
