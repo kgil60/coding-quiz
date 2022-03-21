@@ -76,3 +76,27 @@ header a {
     align-items: center;
 }
 
+.score-list {
+    list-style: none;
+    width: 50%
+}
+
+.score-list .score {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    background-color: rgba(156, 2, 230, 0.5);
+    font-size: 1.2rem;
+    padding: 5px 20px;
+}
+
+.highscore-form input {
+    outline: none;
+    border: 2px solid var(--purple-tertiary);
+    padding: 5px 10px;
+}
+
+.submit-score {
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}
