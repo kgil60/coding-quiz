@@ -1,5 +1,6 @@
 let pageContentEl = document.getElementById("page-content");
 let questionIndex = 0;
+let timerSecs = 75;
 
 let questions = [
     {
@@ -42,18 +43,20 @@ let questions = [
 
 function startBtnHandler(e) {
     if(e.target.matches("#start-button")) {
-        let homeContentEl = document.getElementById("home-content")
+        let homeContentEl = document.querySelector(".main-content")
 
         pageContentEl.removeChild(homeContentEl)
 
-        displayQuestion(questionIndex);
+        displayQuestion();
+
+        timer();
 
     }
 }
 
-function displayQuestion(questionIndex) {
+function displayQuestion() {
     let questionContentEl = document.createElement("div");
-    questionContentEl.className = "question-content";
+    questionContentEl.className = "main-content";
 
     let questionNameEl = document.createElement("h1");
     questionNameEl.className = "title";
@@ -69,19 +72,50 @@ function displayQuestion(questionIndex) {
         answerEl.className = "answer-item";
 
         let answerBtn = document.createElement("button");
+        let btnIndex = i;
         answerBtn.className = "btn";
         answerBtn.textContent = answerArr[i].answer;
+        answerBtn.setAttribute("index", i)
+        answerBtn.addEventListener("click", () => {
+            let rightWrong = document.createElement("div");
+            rightWrong.className = "right-wrong"
+
+            if(questions[questionIndex].answers[btnIndex].isTrue){
+                rightWrong.innerHTML = "<p><em>Correct!</em></p>"
+            } else {
+                rightWrong.innerHTML = "<p><em>Incorrect!</em></p>"
+            }
+
+            let questionContent = document.querySelector(".main-content");
+            pageContentEl.removeChild(questionContent);
+
+            questionIndex++;
+
+            displayQuestion(questionIndex);
+
+            pageContentEl.appendChild(rightWrong);
+
+            setTimeout(function(){
+                pageContentEl.removeChild(rightWrong)
+            }, 2000)
+        });
         answerEl.appendChild(answerBtn);
 
         questionListEl.appendChild(answerEl);
-
-        questionIndex++;
     };
 
     questionContentEl.appendChild(questionListEl);
 
     pageContentEl.appendChild(questionContentEl);
     
+}
+
+function timer() {
+    let timerEl = document.getElementById("timer");
+    setInterval(function(){
+        timerEl.textContent = `Time: ${timerSecs}`;
+        timerSecs--;
+    }, 1000)
 }
 
 pageContentEl.addEventListener("click", startBtnHandler);

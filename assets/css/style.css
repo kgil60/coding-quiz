@@ -36,7 +36,7 @@ header a {
     font-size: 2.5rem;
 }
 
-.main-content p {
+.main-content .p-text {
     font-size: 1.4rem;
     text-align: center;
     width: 60%;
@@ -64,7 +64,15 @@ header a {
     padding: 4%;
 }
 
-.question-content .answer-list {
+.main-content .answer-list {
     list-style: none;
+}
+
+.right-wrong {
+    color: gray;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
