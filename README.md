@@ -1,6 +1,6 @@
 # Coding Quiz
 
-## Test your front end development knowlege with this coding quiz web application! <br> <br>
+## Test your front end development knowledge with this coding quiz web application! <br> <br>
 
 ### This application, developed as a challenge for the Rutgers Coding Bootcamp,  makes use of JavaScript DOM Manipulation and setInterval / setTimeout functions. <br> <br>
 
